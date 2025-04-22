@@ -19,7 +19,17 @@ public class ChangeLanguageAndProtocolPage extends BaseTest {
 	@AndroidFindBy(accessibility = "Patient Registration Dialog Positive (Yes) Button")
 	private WebElement btnYes;
 
-	@AndroidFindBy(accessibility = "Patient Registration Dialog Negative (No) Button")
+	//@AndroidFindBy(accessibility = "Patient Registration Dialog Negative (No) Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/lang_spinner_txt")
+	private WebElement languageSpinner;
+
+	@AndroidFindBy(xpath = "//android.widget.RadioButton[@resource-id=org.intelehealth.app:id/rb_choose_language and @text='हिंदी']")
+	private WebElement hindi;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/positive_btn")
+	private WebElement btnYes;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/negative_btn")
 	private WebElement btnNo;
 
 	@AndroidFindBy(accessibility = "Custom Toolbar Back Arrow ImageView")
@@ -56,6 +66,35 @@ public class ChangeLanguageAndProtocolPage extends BaseTest {
 
 	@AndroidFindBy(accessibility = "Update Protocol Dialog Positive (Update) Button")
 	private WebElement btnUpdateProtocol;
+=======
+	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_title")
+	private WebElement changeLangTitleInDialog;
+	
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_subtitle")
+	private WebElement changeLangSubTitleInDialog;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/refresh")
+	private WebElement icnSync;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/lang_spinner_txt")
+	private WebElement txtSelectedLanguage;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/update_protocols_btn")
+	private WebElement btnUpdateProtocolInChangeLanguage;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/licenseurl")
+	private WebElement txtServerURL;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/licensekey")
+	private WebElement txtLicenseKey;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/positive_btn")
+	private WebElement btnUpdateProtocol;
+	
+	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='Settings']")
+	private WebElement lftPnlSettings;
+>>>>>>> f8382cdd1814d94232a0d4421f898baacef4b320
 
 //	@AndroidFindBy(accessibility = )
 //	private WebElement languageSpinner;
@@ -78,7 +117,12 @@ public class ChangeLanguageAndProtocolPage extends BaseTest {
 	 */
 	public void navigateToChangeLanguageScreen() {
 		click(mnuHamburger, "Clicked on Hamburger Menu");
+<<<<<<< HEAD
 		click(changeLangProtocol, "Clicked on Change Language & Protocol");
+=======
+		click(lftPnlSettings, "\"Clicked on Settings");
+		//click(changeLangProtocol, "Clicked on Change Language & Protocol");
+>>>>>>> f8382cdd1814d94232a0d4421f898baacef4b320
 	}
 
 	public void selectHindiLanguage() {
@@ -102,8 +146,13 @@ public class ChangeLanguageAndProtocolPage extends BaseTest {
 		click(btnReset);
 	}
 
+<<<<<<< HEAD
 	public String getLanguageChangedSuccessFullyText() {
 		return toastLanguageSaved.getText();
+=======
+	public String selectedLanguageTextInDropdown() {
+		return txtSelectedLanguage.getText();
+>>>>>>> f8382cdd1814d94232a0d4421f898baacef4b320
 	}
 
 	public void clickOnUpdateProtocolInChangeLanguage() {
