@@ -1,0 +1,174 @@
+package com.intelehealth.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+
+import com.intelehealth.base.BaseTest;
+
+import io.appium.java_client.pagefactory.AndroidFindBy;
+
+public class ChangeLanguageAndProtocolPage extends BaseTest {
+	
+	@AndroidFindBy(accessibility = "Language Protocol Change Language Spinner TextView")
+	private WebElement languageSpinner;
+
+	@AndroidFindBy(xpath = "(//android.widget.TextView[@content-desc=\"Simple Dialog ListItem Title TextView\"])[2]")
+	private WebElement hindi;
+
+	@AndroidFindBy(accessibility = "Patient Registration Dialog Positive (Yes) Button")
+	private WebElement btnYes;
+
+	//@AndroidFindBy(accessibility = "Patient Registration Dialog Negative (No) Button")
+	@AndroidFindBy(id = "org.intelehealth.app:id/lang_spinner_txt")
+	private WebElement languageSpinner;
+
+	@AndroidFindBy(xpath = "//android.widget.RadioButton[@resource-id=org.intelehealth.app:id/rb_choose_language and @text='हिंदी']")
+	private WebElement hindi;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/positive_btn")
+	private WebElement btnYes;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/negative_btn")
+	private WebElement btnNo;
+
+	@AndroidFindBy(accessibility = "Custom Toolbar Back Arrow ImageView")
+	private WebElement mnuHamburger;
+	
+	@AndroidFindBy(accessibility = "Language Protocol Reset Language Button RelativeLayout")
+	private WebElement btnReset;
+
+	// android.widget.CheckedTextView[@text='Change language & protocol']
+//
+	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@text='Change language & protocol']")
+	private WebElement changeLangProtocol;
+//
+	@AndroidFindBy(accessibility = "Patient Registration Dialog Title TextView")
+	private WebElement changeLangTitleInDialog;
+
+	@AndroidFindBy(accessibility = "Patient Registration Dialog Subtitle TextView")
+	private WebElement changeLangSubTitleInDialog;
+
+	@AndroidFindBy(accessibility = "Language Protocol Refresh ImageButton")
+	private WebElement icnSync;
+
+	@AndroidFindBy(accessibility = "Snackbar Content TextView")
+	private WebElement toastLanguageSaved;
+
+	@AndroidFindBy(accessibility = "Language Protocol Update Protocol RelativeLayout")
+	private WebElement btnUpdateProtocolInChangeLanguage;
+
+	@AndroidFindBy(accessibility = "Update Protocol Dialog Server Url AutoCompleteTextView")
+	private WebElement txtServerURL;
+
+	@AndroidFindBy(accessibility = "Update Protocol Dialog License Key AutoCompleteTextView")
+	private WebElement txtLicenseKey;
+
+	@AndroidFindBy(accessibility = "Update Protocol Dialog Positive (Update) Button")
+	private WebElement btnUpdateProtocol;
+=======
+	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_title")
+	private WebElement changeLangTitleInDialog;
+	
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/dialog_subtitle")
+	private WebElement changeLangSubTitleInDialog;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/refresh")
+	private WebElement icnSync;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/lang_spinner_txt")
+	private WebElement txtSelectedLanguage;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/update_protocols_btn")
+	private WebElement btnUpdateProtocolInChangeLanguage;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/licenseurl")
+	private WebElement txtServerURL;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/licensekey")
+	private WebElement txtLicenseKey;
+
+	@AndroidFindBy(id = "org.intelehealth.app:id/positive_btn")
+	private WebElement btnUpdateProtocol;
+	
+	@AndroidFindBy(xpath = "//android.widget.CheckedTextView[@resource-id='org.intelehealth.app:id/design_menu_item_text' and @text='Settings']")
+	private WebElement lftPnlSettings;
+>>>>>>> f8382cdd1814d94232a0d4421f898baacef4b320
+
+//	@AndroidFindBy(accessibility = )
+//	private WebElement languageSpinner;
+
+	/**
+	 * Updated by @SrinivasBandi
+	 * @throws InterruptedException
+	 */
+	public void verifyUserCanSelectLanguage() throws InterruptedException {
+		click(mnuHamburger, "Clicked on Hamburger Menu");
+		Thread.sleep(2000);
+		click(changeLangProtocol, "Clicked on Change Language & Protocol");
+		click(languageSpinner);
+		click(hindi);
+	}
+
+	/**
+	 * @author @SrinivasBandi
+	 * @throws InterruptedException
+	 */
+	public void navigateToChangeLanguageScreen() {
+		click(mnuHamburger, "Clicked on Hamburger Menu");
+<<<<<<< HEAD
+		click(changeLangProtocol, "Clicked on Change Language & Protocol");
+=======
+		click(lftPnlSettings, "\"Clicked on Settings");
+		//click(changeLangProtocol, "Clicked on Change Language & Protocol");
+>>>>>>> f8382cdd1814d94232a0d4421f898baacef4b320
+	}
+
+	public void selectHindiLanguage() {
+		click(languageSpinner);
+		click(hindi);
+	}
+
+	public List<String> getchangeLanguageConfirmationDialogueLabels() {
+		return getElementsText(changeLangSubTitleInDialog, changeLangTitleInDialog, btnYes, btnNo);
+	}
+
+	public void clickOnYes() {
+		click(btnYes);
+	}
+
+	public void clickOnSync() {
+		click(icnSync);
+	}
+
+	public void clickOnResetButton() {
+		click(btnReset);
+	}
+
+<<<<<<< HEAD
+	public String getLanguageChangedSuccessFullyText() {
+		return toastLanguageSaved.getText();
+=======
+	public String selectedLanguageTextInDropdown() {
+		return txtSelectedLanguage.getText();
+>>>>>>> f8382cdd1814d94232a0d4421f898baacef4b320
+	}
+
+	public void clickOnUpdateProtocolInChangeLanguage() {
+		click(btnUpdateProtocolInChangeLanguage);
+	}
+
+	public void enterServerURL(String serverURL) throws InterruptedException {
+		sendKeys(txtLicenseKey, serverURL);
+	}
+
+	public void enterLicenseKey(String licenseKey) throws InterruptedException {
+		sendKeys(txtLicenseKey, licenseKey);
+	}
+
+	public void clickOnUpdateProtocolButton() {
+		click(btnUpdateProtocol);
+	}
+
+}
